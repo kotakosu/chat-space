@@ -26,13 +26,13 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|eferences|null: false|
-|password|eferences|null: false|
+|email|references|null: false|
+|password|references|null: false|
 ### Association
 - has_many :tweets
 
 
-##groups_usersテーブル
+groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
