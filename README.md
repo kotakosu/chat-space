@@ -30,7 +30,7 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-- has_many :tweets
+- has_many :messages
 
 ## groups_usersテーブル
 
@@ -44,10 +44,19 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+
+# groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association
+- has_many :messages
