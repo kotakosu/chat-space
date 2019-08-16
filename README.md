@@ -29,10 +29,10 @@ Things you may want to cover:
 |email|references|null: false|
 |password|references|null: false|
 ### Association
-- has_many :tweets
+- has_many :messages
 
 
-groups_usersテーブル
+## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -43,7 +43,7 @@ groups_usersテーブル
 - belongs_to :group
 - belongs_to :user
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
@@ -51,3 +51,11 @@ groups_usersテーブル
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|references|null: false|
+|password|references|null: false|
+### Association
+- has_many :messages
