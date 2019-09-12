@@ -11,13 +11,14 @@ $(function(){
            </div>
          </div>
          <div class="return-message">
+              <p class="return-message__content">
              ${message.content}
            </p>
          </div>
          <img src=${message.image} >
        </div>`
-     return html;
-  }
+       return html;
+      };
 $('.js-form').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
@@ -34,11 +35,8 @@ $('.js-form').on('submit', function(e){
   var html = buildHTML(data);
   $('.messages').append(html);
   $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
-  $('form')[0].reset();
-})
+  $('.messages').val('')
+ })
  .fail(function(){
-   alert('error');
- });
- return false;
-});
-});
+  alert('error');
+})
