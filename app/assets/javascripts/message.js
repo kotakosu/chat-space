@@ -10,14 +10,7 @@ $(function(){
          </div>`
     return html;
   }
-  `<div class="message" data-message-id=${message.id}>
-         <div class="up-message__user-name">
-          ${message.user_name}
-         </div>
-         <div class="up-message__date">
-          ${message.date}
-         </div>
-         </div>`
+  
 $('.js-form').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
