@@ -2,23 +2,23 @@ $(function(){
   function buildHTML(message){
      var html =
       `<div class="message" data-message-id=${message.id}>
-         <div class="up-message">
-           <div class="up-message__user-name">
+         <div class="upper-message">
+           <div class="upper-message__user-name">
              ${message.user_name}
            </div>
-           <div class="up-message__date">
+           <div class="upper-message__date">
              ${message.date}
            </div>
          </div>
-         <div class="return-message">
-              <p class="return-message__content">
+         <div class="lower-message">
+           <p class="lower-message__content">
              ${message.content}
            </p>
          </div>
          <img src=${message.image} >
        </div>`
-       return html;
-      };
+     return html;
+   } 
 $('.js-form').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
@@ -31,12 +31,15 @@ $('.js-form').on('submit', function(e){
    processData: false,
    contentType: false
  })
- .done(function(data){
-  var html = buildHTML(data);
-  $('.messages').append(html);
-  $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
-  $('.messages').val('')
- })
- .fail(function(){
-  alert('error');
-})
+  .done(function(data){
+    var html = buildHTML(data);
+    $('.messages').append(html);
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+    $('#new_message')[0].reset();
+  })
+   .fail(function(){
+     alert('error');
+   });
+   $("#pugi").prop("disabled", true);
+});
+});
