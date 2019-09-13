@@ -40,6 +40,6 @@ $('.js-form').on('submit', function(e){
    .fail(function(){
      alert('error');
    });
-   $("#pugi").prop("disabled", true);
+   $("#message").prop("disabled", true);
 });
 });
