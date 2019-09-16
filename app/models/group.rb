@@ -12,4 +12,4 @@ class Group < ApplicationRecord
       'まだメッセージはありません。'
     end
   end
-end
+end」
