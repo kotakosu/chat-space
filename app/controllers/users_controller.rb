@@ -15,5 +15,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+    respond_to do |format|
+      format.html
+      format.json
   end
 end
